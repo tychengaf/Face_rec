@@ -33,16 +33,17 @@ def index():
         return render_template('video.html')
         
     # rendering facial recognition video
-    return """
+    return f"""
     <!doctype html>
     <title>Upload new File</title>
     <h1>Upload new File</h1>
+    <p><br>{app.config['UPLOAD_FOLDER']}</p>
     <form action="" method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
-    <p>%s</p>
-    """ % "<br>".join(app.config['UPLOAD_FOLDER'])
+    
+    """
 
 
 
